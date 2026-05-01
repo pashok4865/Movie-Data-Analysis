@@ -1,30 +1,80 @@
-📊 Movie Ratings Data Warehouse & Analysis
+# 📊 Movie Ratings Data Warehouse & Analysis
 
-This project builds a complete data warehouse solution using the MovieLens dataset to analyze how movie characteristics influence audience behavior and rating patterns. The goal is to identify which movie attributes (such as genres and tags) are associated with higher popularity and better ratings.
+This project uses the MovieLens dataset to examine how movie characteristics influence audience engagement and rating patterns. The focus is on identifying which movie attributes—particularly genres and tags—are associated with popularity and strong audience reception.
 
-The workflow follows a full data engineering and analytics pipeline:
+The project follows a full data warehousing and analytics workflow, beginning with raw CSV ingestion and ending with exploratory visualizations and trend analysis.
 
-Data Collection & Staging: Raw CSV files (movies, ratings, tags) are loaded into SQL Server staging tables.
-Data Warehouse Design: A star schema is implemented with dimension tables (dimMovie, dimUser, dimGenre, dimTag, dimDate) and a central fact table (factMovieRatings).
-Data Transformation: Data is cleaned, normalized, and structured using SQL (including handling multi-valued genres and tag standardization).
-Analysis: SQL queries are used to explore trends such as:
-Most popular genres and tags
-Highest and lowest rated genres
-Tags associated with highly rated movies
-Time-based trends in ratings and user engagement
-Visualization: Results are visualized using Python (Google Colab) through bar charts, line charts, and scatter plots.
+## Project Overview
 
-🔍 Key Insights
-Certain genres (e.g., Drama, Film-Noir) consistently receive higher average ratings.
-Popular tags (e.g., “sci-fi”) highlight audience interest and engagement trends.
-Viewer activity and rating volume vary significantly over time, with noticeable peaks in recent years.
-🛠️ Technologies Used
-SQL Server (data warehousing, ETL, querying)
-Python (Pandas, Matplotlib for visualization)
-Google Colab (analysis environment)
+The dataset includes movie metadata, user ratings, and user-generated tags. These files were loaded into SQL Server staging tables and transformed into a structured data warehouse for analysis.
 
-📁 Repository Structure
-/sql – Database creation, ETL scripts, and analysis queries
-/data – Source CSV files (or references to dataset)
-/notebooks – Colab notebooks for visualization
-/outputs – Generated CSVs and plots
+A star schema was implemented to support reporting and trend analysis, including:
+
+- **Dimension Tables**
+  - `dimMovie`
+  - `dimUser`
+  - `dimGenre`
+  - `dimTag`
+  - `dimDate`
+
+- **Fact Table**
+  - `factMovieRatings`
+
+Data preparation included:
+- Loading raw CSV files into staging tables
+- Cleaning and standardizing tag values
+- Splitting multi-value genre fields
+- Building bridge relationships between movies and genres
+- Creating the fact table for analytical queries
+- Running SQL-based aggregation and time-series analysis
+
+## Research Questions
+
+This project explores the following questions:
+
+- Which movie genres are the most popular?
+- Which genres receive the highest and lowest ratings?
+- Which tags are most frequently associated with movies?
+- What tags appear most often in highly rated films?
+- How has audience engagement changed over time?
+- Which time periods show the highest rating activity?
+
+## Key Findings
+
+The analysis revealed several notable patterns:
+
+- **Drama** was the most consistently popular genre by rating volume.
+- **Film-Noir** and **War** had the highest average ratings among genres with substantial movie counts.
+- Tags such as **"sci-fi"** appeared most frequently, indicating strong audience discussion around those films.
+- Positive sentiment tags were more commonly associated with highly rated movies.
+- Rating activity increased significantly over time, peaking around **2016**, with another spike in **2020**.
+
+## Visualizations
+
+Analysis results were visualized in Python using Google Colab, including:
+
+- Bar charts for genre and tag popularity
+- Rating comparisons across genres
+- Time-series plots for audience activity
+- Scatter plots showing yearly rating behavior
+
+## Technologies Used
+
+- **SQL Server** – ETL, warehouse design, and querying  
+- **Python** – Data handling and visualization  
+- **Pandas** – Data processing  
+- **Matplotlib** – Chart generation  
+- **Google Colab** – Analysis and notebook execution
+
+## Repository Structure
+
+```bash
+/sql        # Database creation scripts, ETL logic, and analysis queries
+/data       # Source files and exported query results
+/notebooks  # Colab notebooks for analysis and visualization
+/outputs    # Generated plots and supporting files
+```
+
+## Purpose
+
+This project demonstrates how data warehousing techniques can be used to transform raw entertainment data into structured analytical insights. It combines database design, SQL querying, and visualization to better understand movie popularity, audience behavior, and rating trends.
