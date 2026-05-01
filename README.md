@@ -1,6 +1,6 @@
 # 📊 Movie Ratings Data Warehouse & Analysis
 
-This project uses the MovieLens dataset to examine how movie characteristics influence audience engagement and rating patterns. The focus is on identifying which movie attributes—particularly genres and tags—are associated with popularity and strong audience reception.
+This project uses the MovieLens dataset to examine how movie characteristics influence audience engagement and rating patterns. The focus is on identifying which movie attributes, particularly genres and tags, are associated with popularity and strong audience reception.
 
 The project follows a full data warehousing and analytics workflow, beginning with raw CSV ingestion and ending with exploratory visualizations and trend analysis.
 
@@ -23,7 +23,7 @@ A star schema was implemented to support reporting and trend analysis, including
 Data preparation included:
 - Loading raw CSV files into staging tables
 - Cleaning and standardizing tag values
-- Splitting multi-value genre fields
+- Splitting multi value genre fields
 - Building bridge relationships between movies and genres
 - Creating the fact table for analytical queries
 - Running SQL-based aggregation and time-series analysis
