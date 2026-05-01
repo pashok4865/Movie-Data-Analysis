@@ -66,14 +66,6 @@ Analysis results were visualized in Python using Google Colab, including:
 - **Matplotlib** – Chart generation  
 - **Google Colab** – Analysis and notebook execution
 
-## Repository Structure
-
-```bash
-/sql        # Database creation scripts, ETL logic, and analysis queries
-/data       # Source files and exported query results
-/notebooks  # Colab notebooks for analysis and visualization
-/outputs    # Generated plots and supporting files
-```
 
 ## Purpose
 
